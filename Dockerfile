@@ -64,12 +64,6 @@ RUN apt update && apt upgrade -y && \
 # Pypi package Repo upgrade
 RUN pip3 install --upgrade pip setuptools
 
-# Copy Python Requirements to /root/SpideyRobot
-RUN git clone -b shiken https://github.com/RyoCoder/SpideyRobot /root/SpideyRobot
-WORKDIR /root/SpideyRobot
-
-#Copy config file to /root/SpideyRobot/SpideyRobot
-COPY ./SpideyRobot/sample_config.py ./SpideyRobot/config.py* /root/SpideyRobot/SpideyRobot/
 
 ENV PATH="/home/bot/bin:$PATH"
 
